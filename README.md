@@ -1,5 +1,5 @@
 # Sex Quality Control for NGS data
-Identify the sex of samples in a sequencing experiment is an important quality control step for the discovering of errors both as metadata information and sample trazability. Here, we explain how to use the self-reported sex of the individual and two bioinformatic approaches for sex quality control analysis.
+Identifying the sex of samples in a sequencing experiment is an important quality control step for the discovering of errors both as metadata information and sample trazability. Here, we explain how to use the self-reported sex of the individual and two bioinformatic approaches for sex quality control analysis.
 
 ---
 
