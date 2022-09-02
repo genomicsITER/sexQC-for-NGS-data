@@ -51,9 +51,10 @@ genes_Y=( "gene1" "gene2" ... )
 coordinates_Y=( "chrY:..-.." "chrY:..-.." ...)
 
 ## chrX
-echo "###############################################################################################"
-echo "                                        Processing chrX                                        "
-echo "###############################################################################################"
+echo ""
+echo "###################################"
+echo "          Processing chrX          "
+echo "###################################"
 
 ##Iterate over the BAM files contained in the corresponding list
 while IFS= read -r file
@@ -80,9 +81,9 @@ done < "${bam_samples_X}"
 
 # chrY
 echo ""
-echo "###############################################################################################"
-echo "                                        Processing chrY                                        "
-echo "###############################################################################################"
+echo "###################################"
+echo "          Processing chrY          "
+echo "###################################"
 
 ##Iterate over the BAM files contained in the corresponding list
 while IFS= read -r file
