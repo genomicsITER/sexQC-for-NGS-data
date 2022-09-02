@@ -42,7 +42,7 @@ ${SOMALIER} relate -o ${outname} ./*.somalier
 
 <!-- ------------------ SECTION ------------------ -->
 ## Approach 2: sex check analysis with a Heuristic
-A second approach uses an in-house heuristic algorithm coded in BASH. The script let us to analyze the coverage or vertical-depth of 11 selected genes located in the non-pseudoautosomal regions (NPAR) of the X and Y chromosomes ([Table 1](table-1-list-of-genes-assessed-in-sex-classification-in-both-x-and-y-chromosomes)). We then assess the depth distribution accross chromosomes X and Y in order to identify high covered genes suitable for sex classification based on read depth. Briefly, this is the algorithm:
+A second approach uses an in-house heuristic algorithm coded in BASH. The script let us to analyze the coverage or vertical-depth of 11 selected genes located in the non-pseudoautosomal regions (NPAR) of the X and Y chromosomes (Table 1). We then assess the depth distribution accross chromosomes X and Y in order to identify high covered genes suitable for sex classification based on read depth. Briefly, this is the algorithm:
 <ol>
   <li>Get the coverage distribution in NPAR of chromosomes X and Y.</li>
   <li>Identify genes with high coverage.</li>
@@ -130,7 +130,7 @@ $$f_Y = {Nreads_{chrY} \over Nreads_{chrY} + Nreads_{chrX}}$$
 
 Theoretically, female samples will have all reads mapped to chromosome X and none in chromosome Y. Accordingly, <i>f<sub>X</sub></i>=1 and <i>f<sub>Y</sub></i>=0. In practice, female samples show nearly all reads mapped to chromosome X and nearly none in chromosome Y, thus resulting in fractions with values as <i>f<sub>X</sub></i>&#8771;1 and <i>f<sub>Y</sub></i>&#8771;0. 
 
-We have observed in our testing and validation datasets that the fraction of reads in chromosome X, <i>f<sub>X</sub></i>, is within the interval [0.988, 1], and the fraction of reads mapped to chromosome Y, <i>f<sub>Y</sub></i>, ranges in the interval [0, 0.012].
+In our testing and validation datasets we have observed that the fraction of reads in chromosome X, <i>f<sub>X</sub></i>, is within the interval [0.988, 1], and the fraction of reads mapped to chromosome Y, <i>f<sub>Y</sub></i>, ranges in the interval [0, 0.012].
 
 Conversely, male samples will have mapped reads splitted between genes on the X and Y chromosomes. As a result, we have observed a fraction of mapped reads in chromosome X in the interval [0.176, 0.593] and a fraction of reads mapped to chromosome Y in the interval [0.407, 0.824].
 
