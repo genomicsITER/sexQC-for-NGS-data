@@ -1,25 +1,36 @@
-# Sex Quality Control for NGS data
-Identifying the sex of samples in a sequencing experiment is an important quality control step for the discovering of errors both as metadata information and sample trazability. Here, we explain how to use the self-reported sex of the individual and two bioinformatic approaches for sex quality control analysis.
+<!-- ------------------ SECTION ------------------ -->
+<p align="left">
+  <a href="https://www.iter.es" title="Instituto Tecnológico y de Energ&iacute;as Renovables (ITER) / Institute of Technology and Renewable Energy (ITER)">
+    <img src="https://github.com/genomicsITER/sexQC-for-NGS-data/blob/main/images/ITER_logo.png" width="30%" /> 
+  </a>
+</p>
 
----
+## Sex Quality Control for NGS data ##
+
+Identifying the genetic sex of a sample from the sequence obtained in a Next Generation Sequencing (NGS) experiment is a mandatory quality control step for the discovery of errors in the metadata provided and sample traceability. Here, we explain how to use the self-reported sex of an individual and two different bioinformatic approaches for quality control analysis of sex.
+
 
 ## Somalier analysis
-The first approach, performed by the `somalier` v0.2.15. tool ([Pedersen et al. 2019](https://genomemedicine.biomedcentral.com/articles/10.1186/s13073-020-00761-2)), identifies the sex of the sample from the depth of the X and Y chromosome reads. This software uses a total of 17,766 positions in coding regions to be able to work with different types of experiments (whole-exome and -genome sequencing, RNA-Seq, etc.). These positions accomplish several requisites such as, a high quality, population allele frequency around 0.5 and, exclusion of segmental duplications regions, low complexity regions, and regions nearby insertion and deletions. Relatedness is calculated by allelic concordance from single nucleotide variants within these positions (homozygous, heterozygous, and alternative homozygous).
+A first approach, performed by means of the `somalier` v0.2.15. tool ([Pedersen et al. 2019](https://genomemedicine.biomedcentral.com/articles/10.1186/s13073-020-00761-2)), let us identify the sex of the sample from the depth of the X and Y chromosome reads. This tool uses a total of 17,766 positions in coding regions to be able to work with different types of experiments (whole-exome and -genome sequencing, RNA-Seq, etc.). These positions accomplish several requisites such as, a high quality, population allele frequency around 0.5 and, exclusion of segmental duplications regions, low complexity regions, and regions nearby insertion and deletions. Relatedness is calculated by allelic concordance from single nucleotide variants within these positions (homozygous, heterozygous, and alternative homozygous).
 
-The software uses a genomic VCF file (gVCF) to extract variant and non-variant information in these positions. `somalier extract` extracts position data to a binary file. And then, `somalier relate` calculate and create an [HTML file](https://brentp.github.io/somalier/ex.html) for results visualization. An example code is shown below:
+The software uses a genomic VCF file (gVCF) to extract variant and non-variant information in these positions. With `somalier extract` command we extract position data to a binary file. And then, `somalier relate` calculate and create an [HTML file](https://brentp.github.io/somalier/ex.html) for results visualization. An example code is shown below:
 
 ```
-# Somalier binary
+# Path to Somalier binary
 SOMALIER="/path/to/somalier_bin"
-# Sites file
+
+# Path to Sites file
 sites="/path/to/sites.hg19.vcf.gz"
-# Reference
+
+# Genome reference
 ref="/path/to/ucsc.hg19.fasta"
-# Input VCF file
+
+# Path to your input VCF file
 infile=”/path/to/VCF_file”
 
-$SOMALIER extract -d ${outdir} --sites ${sites} -f ${ref} ${infile}
-$SOMALIER relate -o ${outname} ./*.somalier
+#Run these commands
+${SOMALIER} extract -d ${outdir} --sites ${sites} -f ${ref} ${infile}
+${SOMALIER} relate -o ${outname} ./*.somalier
 ```
 
 ---
