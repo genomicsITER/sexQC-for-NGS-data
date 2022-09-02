@@ -13,7 +13,7 @@ Identifying the genetic sex of a sample from the sequence obtained in a Next Gen
 ---
 
 <!-- ------------------ SECTION ------------------ -->
-## Approach 1: Somalier sex check analysis
+## Approach 1: sex check analysis with Somalier
 A first approach, performed by means of the `Somalier` v0.2.15. tool ([Pedersen et al. 2019](https://genomemedicine.biomedcentral.com/articles/10.1186/s13073-020-00761-2)), let us to infer the sex of the sample from the depth of the X and Y chromosome reads. This tool uses a total of 17,766 positions in coding regions to be able to work with data from different type of experiments (whole-exome and -genome sequencing, RNA-Seq, etc.). These positions meet several requisites such as: (i) frequently sequenced with high quality, (ii) population allele frequency around 0.5, and (iii) exclusion of segmental duplications regions, low complexity regions and regions nearby insertion and deletions. Relatedness among samples is calculated by allelic concordance from single nucleotide variants within these positions (classified as homozygous, heterozygous, and alternative homozygous).
 
 `Somalier` uses a genomic VCF file (gVCF) to extract variant and non-variant information from these positions. With `somalier extract` command we extract position data to a binary file. In a second step, `somalier relate` calculate and create an [HTML file](https://brentp.github.io/somalier/ex.html) for results visualization. An example code is shown below:
@@ -36,11 +36,13 @@ ${SOMALIER} extract -d ${outdir} --sites ${sites} -f ${ref} ${infile}
 ${SOMALIER} relate -o ${outname} ./*.somalier
 ```
 
+[Visit the repository of `Somalier` at GitHub](https://github.com/brentp/somalier)
+
 ---
 
 <!-- ------------------ SECTION ------------------ -->
-## Approach 2: Heuristic sex checkanalysis
-A second approach is based on a in-house heuristic script coded in BASH. The script let us to analyze the coverage or vertical-depth of 11 selected genes in the non-pseudoautosomal regions of the X and Y chromosomes ([Table 1](table-1-list-of-genes-assessed-in-sex-classification-in-both-x-and-y-chromosomes)). We then assess the depth distribution accross both chromosomes X and Y to identify high covered genes suitable for sex classification based on read depth. In brief, we extract selected gene regions from BAM files, and then, reads on these genes are counted firstly by gene, and later, the total number of reads per chromosome. Reads with a mapping quality lower than 50 (MappingQuality<50) are filtered out for the analysis. Once we calculate the read count, we compare the number of reads between both chromosomes. The fraction of reads in chromosome X compared to that of chromosome Y is calculated, and vice versa ([Equation 1](equation-1-fraction-of-reads-comparing-both-chromosomes)).
+## Approach 2: sex check analysis with a Heuristic
+A second approach used an in-house heuristic algorithm coded in BASH. The script let us to analyze the coverage or vertical-depth of 11 selected genes in the non-pseudoautosomal regions of the X and Y chromosomes ([Table 1](table-1-list-of-genes-assessed-in-sex-classification-in-both-x-and-y-chromosomes)). We then assess the depth distribution accross chromosomes X and Y in order to identify high covered genes suitable for sex classification based on read depth. In brief, we identify and extract selected gene regions from BAM files. Then the number of total reads per-chromosome and per-gene are obtained. Reads with a mapping quality lower than 50 (MQ<50) are filtered out for the analysis. Once we calculate the read counts, we compare the number of reads between both chromosomes. The fraction of reads in chromosome X compared to that of chromosome Y is calculated, and viceversa ([Equation 1](equation-1-fraction-of-reads-comparing-both-chromosomes)).
 
 <div align="center">
   <p></p>
@@ -100,7 +102,11 @@ A second approach is based on a in-house heuristic script coded in BASH. The scr
 </table>
 </div>
 
-##### Equation 1. Fraction of reads comparing both chromosomes.
+<div align="center">
+  <p></p>
+<b>Equation 1</b>. Fraction of reads per chromosome.
+  <p></p>
+  
 $$f_X = {Nreads_{chrX} \over Nreads_{chrX} + Nreads_{chrY}}$$
 
 $$f_Y = {Nreads_{chrY} \over Nreads_{chrY} + Nreads_{chrX}}$$
