@@ -7,13 +7,13 @@
 
 ## Sex Quality Control for NGS data ##
 
-Identifying the genetic sex of a sample from the sequence obtained in a Next Generation Sequencing (NGS) experiment is a mandatory quality control step for the discovery of errors in the metadata provided and sample traceability. Here, we explain how to use the self-reported sex of an individual and two different bioinformatic approaches, <i>Somalier</i> and <i>Heuristic</i> based analysis, for quality control analysis of sex.
+Identifying the genetic sex of a sample from the sequence obtained in a Next Generation Sequencing (NGS) experiment is a mandatory quality control step for the discovery of errors in the metadata provided and sample traceability. Here, we explain how to use the self-reported sex of an individual and two different bioinformatic approaches, `Somalier` and `Heuristic` based analysis, for quality control analysis of sex.
 
 
 ## Somalier analysis
-A first approach, performed by means of the `somalier` v0.2.15. tool ([Pedersen et al. 2019](https://genomemedicine.biomedcentral.com/articles/10.1186/s13073-020-00761-2)), let us to identify the sex of the sample from the depth of the X and Y chromosome reads. This tool uses a total of 17,766 positions in coding regions to be able to work with different types of experiments (whole-exome and -genome sequencing, RNA-Seq, etc.). These positions meet several requisites such as: a high quality, population allele frequency around 0.5, exclusion of segmental duplications regions, low complexity regions, and regions nearby insertion and deletions. Relatedness is calculated by allelic concordance from single nucleotide variants within these positions (classified as homozygous, heterozygous, and alternative homozygous).
+A first approach, performed by means of the `Somalier` v0.2.15. tool ([Pedersen et al. 2019](https://genomemedicine.biomedcentral.com/articles/10.1186/s13073-020-00761-2)), let us to identify the sex of the sample from the depth of the X and Y chromosome reads. This tool uses a total of 17,766 positions in coding regions to be able to work with data from different type of experiments (whole-exome and -genome sequencing, RNA-Seq, etc.). These positions meet several requisites such as: a high quality, population allele frequency around 0.5, exclusion of segmental duplications regions, low complexity regions, and regions nearby insertion and deletions. Relatedness is calculated by allelic concordance from single nucleotide variants within these positions (classified as homozygous, heterozygous, and alternative homozygous).
 
-The software uses a genomic VCF file (gVCF) to extract variant and non-variant information in these positions. With `somalier extract` command we extract position data to a binary file. And then, `somalier relate` calculate and create an [HTML file](https://brentp.github.io/somalier/ex.html) for results visualization. An example code is shown below:
+`Somalier` uses a genomic VCF file (gVCF) to extract variant and non-variant information from these positions. With `somalier extract` command we extract position data to a binary file. In a second step, `somalier relate` calculate and create an [HTML file](https://brentp.github.io/somalier/ex.html) for results visualization. An example code is shown below:
 
 ```
 # Path to Somalier binary
@@ -22,13 +22,13 @@ SOMALIER="/path/to/somalier_bin"
 # Path to Sites file
 sites="/path/to/sites.hg19.vcf.gz"
 
-# Genome reference
+# Path to reference genome
 ref="/path/to/ucsc.hg19.fasta"
 
 # Path to your input VCF file
 infile=”/path/to/VCF_file”
 
-#Run these commands
+# Run these commands
 ${SOMALIER} extract -d ${outdir} --sites ${sites} -f ${ref} ${infile}
 ${SOMALIER} relate -o ${outname} ./*.somalier
 ```
