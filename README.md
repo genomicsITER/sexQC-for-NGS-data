@@ -175,7 +175,7 @@ A scatter plot representing the fraction of reads in X-chromosome in the x-axis,
 
 ### Code for the `Heuristic` approach ###
 
-&nbsp;&nbsp;Detailed <a href="https://github.com/genomicsITER/sexQC-for-NGS-data/codes/sex-check_heuristic-inference.md">code</a> with command usage for `Sexi-Heuristic`.
+&nbsp;&nbsp;Detailed <a href="https://github.com/genomicsITER/sexQC-for-NGS-data/blob/main/codes/sex-check_heuristic-inference.md">code</a> with command usage for `Sexi-Heuristic`.
 
 <p align="right">
   <a href="#sex-check-qc" title="Up">
