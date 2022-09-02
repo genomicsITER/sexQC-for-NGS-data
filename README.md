@@ -42,11 +42,18 @@ ${SOMALIER} relate -o ${outname} ./*.somalier
 
 <!-- ------------------ SECTION ------------------ -->
 ## Approach 2: sex check analysis with a Heuristic
-A second approach uses an in-house heuristic algorithm coded in BASH. The script let us to analyze the coverage or vertical-depth of 11 selected genes located in the non-pseudoautosomal regions of the X and Y chromosomes ([Table 1](table-1-list-of-genes-assessed-in-sex-classification-in-both-x-and-y-chromosomes)). We then assess the depth distribution accross chromosomes X and Y in order to identify high covered genes suitable for sex classification based on read depth. In brief:
-- We identify and extract selected gene regions from BAM files.
-- Then the number of total reads per-chromosome and per-gene are obtained.
-- Reads with a mapping quality lower than 50 (MQ<50) are filtered out for the analysis. 
-- Once we calculate the read counts, we compare the number of reads between both chromosomes. The fraction of reads in chromosome X compared to that of chromosome Y is calculated, and viceversa ([Equation 1](equation-1-fraction-of-reads-comparing-both-chromosomes)).
+A second approach uses an in-house heuristic algorithm coded in BASH. The script let us to analyze the coverage or vertical-depth of 11 selected genes located in the non-pseudoautosomal regions (NPAR) of the X and Y chromosomes ([Table 1](table-1-list-of-genes-assessed-in-sex-classification-in-both-x-and-y-chromosomes)). We then assess the depth distribution accross chromosomes X and Y in order to identify high covered genes suitable for sex classification based on read depth. Briefly, this is the algorithm:
+<ol>
+  <li>Get the coverage distribution in NPAR of chromosomes X and Y.</li>
+  <li>Identify genes with high coverage.</li>
+  <li>Extract selected gene regions from the corresponding BAM files.</li>
+  <li>Obtain the number of reads per-chromosome and per-gene.</li>
+  <li>Filter reads with a mapping quality lower than 50 (MQ<50).</li>
+  <li>Compute the fraction of reads in chromosomes X and Y according to [Equation 1].</li>
+  <li>Plot results.</li>
+</ol>
+
+<br />
 
 <div align="center">
   <p></p>
