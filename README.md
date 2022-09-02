@@ -8,7 +8,7 @@
 </p>
 
 <!-- ------------------ SECTION ------------------ -->
-## Sex inference as a Quality Control for NGS data ##
+## Sex Inference as a Quality Control for NGS data ##
 
 Identifying the genetic sex of a sample from the sequence obtained in a Next Generation Sequencing (NGS) experiment is a mandatory quality control step for the discovery of errors in the metadata provided and to contribute to sample traceability. Here, we explain how to use the self-reported sex of an individual and two different bioinformatic approaches, `Somalier` and `Heuristic` based analysis, for quality control analysis of sex.
 
