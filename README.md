@@ -141,7 +141,7 @@ Male samples will have mapped reads splitted between genes on the X and Y chromo
 
 Male samples use to have a higher dispersion than females in the calculated fractions as a consequence of the observed variation in read depth between X and Y chromosomes.
 
-A scatter plot representing the fraction of reads in X-chromosome in the x-axis, and the fraction of reads in Y-chromosome in the y-axis for each sample is shown (Figure 1). This plots shows three different clusters: one for female samples (<i>f<sub>X</sub></i>, <i>f<sub>Y</sub></i>), one for male samples (<i>f<sub>X</sub></i>, <i>f<sub>Y</sub></i>), and a third cluster representing samples with uncertain sex assignation. The reasons for an unassigned sex could be related to a contamination of another sample with the opposite sex, sample swapping, or an error in the sample name.
+A scatter plot representing the fraction of reads in X-chromosome in the x-axis, and the fraction of reads in Y-chromosome in the y-axis for each sample is shown (Figure 1). This plots shows three different clusters: one for female samples, one for male samples, and a third cluster representing samples with uncertain sex assignation. Uncertainties in sex inference may arise as a consequence of sample contamination (i.e. contamination of a sample with a different sex), sample swapping, error in the sample labeling, etc.
 
 ##### Figure 1. Sex classification of multiple samples based on heuristic analysis.
 
