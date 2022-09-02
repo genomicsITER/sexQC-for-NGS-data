@@ -20,7 +20,7 @@ A first approach, performed by means of the `Somalier` v0.2.15. tool ([Pedersen 
 
 `Somalier` uses a genomic VCF file (gVCF) to extract variant and non-variant information from these positions. With `somalier extract` command we extract position data to a binary file. In a second step, `somalier relate` calculate and create an [HTML file](https://brentp.github.io/somalier/ex.html) for results visualization. An example code is shown below:
 
-```
+```Bash
 # Path to Somalier binary
 SOMALIER="/path/to/somalier_bin"
 
@@ -31,7 +31,7 @@ sites="/path/to/sites.hg19.vcf.gz"
 ref="/path/to/ucsc.hg19.fasta"
 
 # Path to your input VCF file
-infile=”/path/to/VCF_file”
+infile="/path/to/VCF_file"
 
 # Run these commands
 ${SOMALIER} extract -d ${outdir} --sites ${sites} -f ${ref} ${infile}
