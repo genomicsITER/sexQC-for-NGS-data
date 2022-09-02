@@ -15,7 +15,7 @@
 </p>
 
 <a name="code"></a>
-#### 1. FASTQ Aggregation and Interleaving with BBMap:
+#### Detailed code for the Heuristic sex inference quality control
 ```Bash
 
 #!/bin/bash
@@ -26,7 +26,7 @@
 ## If you use a HPC environment:
 ## > Uncomment next line to source modules in the actual user profile
 #source /etc/profile.d/profile.modules.sh
-## > Uncomment this line to load modules at HPC #
+## > Uncomment this line to load the required modules at HPC #
 #module load gcc/10.2.0 xz/5.2.5/gcc htslib/1.12/gcc samtools/1.12/gcc
 
 ## Define dirs and files
@@ -106,9 +106,10 @@ done
 	echo ""
 done < "${bam_samples_Y}"
 
-
 ## End of script
 ```
+
+Finally, take the 'reads_table.tsv' file and plot the fractions <i>f<sub>Y</sub></i> <i>vs</i> <i>f<sub>X</sub></i> in your fauvorite data analysis program.
 
 <p align="right">
   <a href="#sex-check-qc-code" title="Up">
