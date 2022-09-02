@@ -1,6 +1,6 @@
 <!-- ------------------ SECTION ------------------ -->
-<a name="sex-check-qc"><
-/a>
+<a name="sex-check-qc"></a>
+
 <p align="left">
   <a href="https://www.iter.es" title="Instituto Tecnológico y de Energ&iacute;as Renovables (ITER) / Institute of Technology and Renewable Energy (ITER)">
     <img src="https://github.com/genomicsITER/sexQC-for-NGS-data/blob/main/images/ITER_logo.png" width="30%" /> 
