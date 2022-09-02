@@ -10,7 +10,7 @@
 <!-- ------------------ SECTION ------------------ -->
 ## Sex Inference as a Quality Control for NGS data ##
 
-The inference of the genetic sex of a sample from its sequence obtained in a Next Generation Sequencing (NGS) experiment is a mandatory quality control step for the discovery of errors in the metadata provided and to contribute to sample traceability. Here, we explain how to use the self-reported sex of an individual and two different bioinformatic approaches, `Somalier` and `Heuristic` based analysis, to infere the genetic sex of a sample and perform a quality control analysis.
+The inference of the genetic sex of a sample from its sequence obtained in a Next Generation Sequencing (NGS) experiment is a mandatory quality control step for the discovery of errors in the metadata provided and to contribute to sample traceability. Here, we explain how to use the self-reported sex of an individual and two different bioinformatic approaches, `Somalier` and `Sexi-Heuristic` based analysis, to infere the genetic sex of a sample and perform a quality control analysis.
 
 ---
 
@@ -49,10 +49,10 @@ ${SOMALIER} relate -o ${outname} ./*.somalier
 <hr>
 <!-- ------------------ SECTION ------------------ -->
 
-## Approach 2: sex inference with a Heuristic
-A second approach uses an in-house `Heuristic` algorithm coded in BASH. The script let us to analyze the coverage or vertical-depth of 11 selected genes located in the non-pseudoautosomal regions (NPAR) of the X and Y chromosomes (Table 1). We then assess the depth distribution accross chromosomes X and Y in order to identify high covered genes suitable for sex classification based on read depth.
+## Approach 2: sex inference with a Sexi-Heuristic
+A second approach uses an in-house `Sexi-Heuristic` algorithm coded in BASH. The script let us to analyze the coverage or vertical-depth of 11 selected genes located in the non-pseudoautosomal regions (NPAR) of the X and Y chromosomes (Table 1). We then assess the depth distribution accross chromosomes X and Y in order to identify high covered genes suitable for sex classification based on read depth.
 
-Briefly, the `Heuristic` follows this algorithm:
+Briefly, the `Sexi-Heuristic` follows this algorithm:
 <ol>
   <li>Compute the coverage distribution in NPAR of chromosomes X and Y.</li>
   <li>Identify genes with high coverage.</li>
@@ -159,7 +159,7 @@ A scatter plot representing the fraction of reads in X-chromosome in the x-axis,
   </a>
 </p>
 
-<b>Figure 1</b>. Sex inference of multiple samples based on our heuristic analysis.
+<b>Figure 1</b>. Sex inference of multiple samples based on our `Sexi-Heuristic` analysis.
 
 </div>
 
