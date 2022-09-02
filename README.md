@@ -49,7 +49,7 @@ ${SOMALIER} relate -o ${outname} ./*.somalier
 <hr>
 <!-- ------------------ SECTION ------------------ -->
 
-## Approach 2: sex inference with a Sexi-Heuristic
+## Approach 2: sex inference with a Heuristic
 A second approach uses an in-house `Sexi-Heuristic` algorithm coded in BASH. The script let us to analyze the coverage or vertical-depth of 11 selected genes located in the non-pseudoautosomal regions (NPAR) of the X and Y chromosomes (Table 1). We then assess the depth distribution accross chromosomes X and Y in order to identify high covered genes suitable for sex classification based on read depth.
 
 Briefly, the `Sexi-Heuristic` follows this algorithm:
@@ -168,7 +168,7 @@ A scatter plot representing the fraction of reads in X-chromosome in the x-axis,
 
 ### Code for the `Heuristic` approach ###
 
-&nbsp;&nbsp;Detailed <a href="https://github.com/genomicsITER/sexQC-for-NGS-data/codes/sex-check_heuristic-inference.md">code</a> with command usage for the`Heuristic`.
+&nbsp;&nbsp;Detailed <a href="https://github.com/genomicsITER/sexQC-for-NGS-data/codes/sex-check_heuristic-inference.md">code</a> with command usage for `Sexi-Heuristic`.
 
 <p align="right">
   <a href="#sex-check-qc" title="Up">
