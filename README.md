@@ -135,13 +135,13 @@ $$f_Y = {Nreads_{chrY} \over Nreads_{chrY} + Nreads_{chrX}}$$
 
 Theoretically, female samples will have all reads mapped to chromosome X and none in chromosome Y. Accordingly, <i>f<sub>X</sub></i>=1 and <i>f<sub>Y</sub></i>=0. In practice, female samples show nearly all reads mapped to chromosome X and nearly none in chromosome Y, thus resulting in fractions with values as <i>f<sub>X</sub></i>&#8771;1 and <i>f<sub>Y</sub></i>&#8771;0. 
 
-In our testing and validation datasets we have observed that the fraction of reads in chromosome X, <i>f<sub>X</sub></i>, is within the interval [0.988, 1], and the fraction of reads mapped to chromosome Y, <i>f<sub>Y</sub></i>, ranges in the interval [0, 0.012].
+In our testing and validation datasets we have observed that the fraction of reads in chromosome X, <i>f<sub>X</sub></i>, shows values within the interval [0.988, 1], and the fraction of reads mapped to chromosome Y, <i>f<sub>Y</sub></i>, ranges in the interval [0, 0.012].
 
-Conversely, male samples will have mapped reads splitted between genes on the X and Y chromosomes. As a result, we have observed a fraction of mapped reads in chromosome X in the interval [0.176, 0.593] and a fraction of reads mapped to chromosome Y in the interval [0.407, 0.824].
+Male samples will have mapped reads splitted between genes on the X and Y chromosomes. As a result, we have observed a fraction of mapped reads in chromosome X in the interval [0.176, 0.593] and the fraction of reads mapped to chromosome Y ranges in the interval [0.407, 0.824].
 
 Male samples use to have a higher dispersion than females in the calculated fractions as a consequence of the observed variation in read depth between X and Y chromosomes.
 
-Finally, we create a scatter plot representing the fraction of reads in X-chromosome in the x-axis, and the fraction of reads in Y-chromosome in the y-axis for each sample ([Figure 1](figure-1-sex-classification-of-samples-based-on-heuristic-analysis)). As can be seen, the figure shows three different clusters: one for female samples, one for male samples, and a third cluster representing samples with uncertain sex assignation. The reasons for an unassigned sex could be related to a contamination of another sample with the opposite sex, sample swapping, or an error in the sample name.
+A scatter plot representing the fraction of reads in X-chromosome in the x-axis, and the fraction of reads in Y-chromosome in the y-axis for each sample is shown (Figure 1). This plots shows three different clusters: one for female samples (<i>f<sub>X</sub></i>, <i>f<sub>Y</sub></i>), one for male samples (<i>f<sub>X</sub></i>, <i>f<sub>Y</sub></i>), and a third cluster representing samples with uncertain sex assignation. The reasons for an unassigned sex could be related to a contamination of another sample with the opposite sex, sample swapping, or an error in the sample name.
 
 ##### Figure 1. Sex classification of multiple samples based on heuristic analysis.
 
