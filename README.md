@@ -5,13 +5,16 @@
   </a>
 </p>
 
+<!-- ------------------ SECTION ------------------ -->
 ## Sex Quality Control for NGS data ##
 
 Identifying the genetic sex of a sample from the sequence obtained in a Next Generation Sequencing (NGS) experiment is a mandatory quality control step for the discovery of errors in the metadata provided and sample traceability. Here, we explain how to use the self-reported sex of an individual and two different bioinformatic approaches, `Somalier` and `Heuristic` based analysis, for quality control analysis of sex.
 
+---
 
-## Somalier sex check analysis
-A first approach, performed by means of the `Somalier` v0.2.15. tool ([Pedersen et al. 2019](https://genomemedicine.biomedcentral.com/articles/10.1186/s13073-020-00761-2)), let us to identify the sex of the sample from the depth of the X and Y chromosome reads. This tool uses a total of 17,766 positions in coding regions to be able to work with data from different type of experiments (whole-exome and -genome sequencing, RNA-Seq, etc.). These positions meet several requisites such as: a high quality, population allele frequency around 0.5, exclusion of segmental duplications regions, low complexity regions, and regions nearby insertion and deletions. Relatedness is calculated by allelic concordance from single nucleotide variants within these positions (classified as homozygous, heterozygous, and alternative homozygous).
+<!-- ------------------ SECTION ------------------ -->
+## Approach 1: Somalier sex check analysis
+A first approach, performed by means of the `Somalier` v0.2.15. tool ([Pedersen et al. 2019](https://genomemedicine.biomedcentral.com/articles/10.1186/s13073-020-00761-2)), let us to identify the sex of the sample from the depth of the X and Y chromosome reads. This tool uses a total of 17,766 positions in coding regions to be able to work with data from different type of experiments (whole-exome and -genome sequencing, RNA-Seq, etc.). These positions meet several requisites such as: (i) frequently sequenced with high quality, (ii) population allele frequency around 0.5, and (iii) exclusion of segmental duplications regions, low complexity regions and regions nearby insertion and deletions. Relatedness is calculated by allelic concordance from single nucleotide variants within these positions (classified as homozygous, heterozygous, and alternative homozygous).
 
 `Somalier` uses a genomic VCF file (gVCF) to extract variant and non-variant information from these positions. With `somalier extract` command we extract position data to a binary file. In a second step, `somalier relate` calculate and create an [HTML file](https://brentp.github.io/somalier/ex.html) for results visualization. An example code is shown below:
 
@@ -35,60 +38,63 @@ ${SOMALIER} relate -o ${outname} ./*.somalier
 
 ---
 
-## Heuristic sex checkanalysis
+<!-- ------------------ SECTION ------------------ -->
+## Approach 2: Heuristic sex checkanalysis
 A second approach is based on a in-house heuristic script coded in BASH. The script let us to analyze the coverage or vertical-depth of 11 selected genes in the non-pseudoautosomal regions of the X and Y chromosomes ([Table 1](table-1-list-of-genes-assessed-in-sex-classification-in-both-x-and-y-chromosomes)). We then assess the depth distribution accross both chromosomes X and Y to identify high covered genes suitable for sex classification based on read depth. In brief, we extract selected gene regions from BAM files, and then, reads on these genes are counted firstly by gene, and later, the total number of reads per chromosome. Reads with a mapping quality lower than 50 (MappingQuality<50) are filtered out for the analysis. Once we calculate the read count, we compare the number of reads between both chromosomes. The fraction of reads in chromosome X compared to that of chromosome Y is calculated, and vice versa ([Equation 1](equation-1-fraction-of-reads-comparing-both-chromosomes)).
 
-##### Table 1. List of genes assessed in sex classification in both X and Y chromosomes.
 <div align="center">
+  <p></p>
+<b>Table 1</b>. List of genes assessed in sex classification in both X and Y chromosomes.
+  <p></p>
 <table>
   <thead>
     <tr>
-      <th>Chromosomes</th>
-      <th colspan=3>Genes</th>
+      <th align="center">Chromosomes</th>
+      <th align="center" colspan=3>Genes</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td rowspan=4>ChrX</td>
-      <td><i>RAB39B</i></td>
-      <td><i>ACTRT1</i></td>
-      <td><i>SSX1</i></td>
+      <td align="center" rowspan=4>ChrX</td>
+      <td align="center"><i>RAB39B</i></td>
+      <td align="center"><i>ACTRT1</i></td>
+      <td align="center"><i>SSX1</i></td>
     </tr>
     <tr>
-      <td><i>F8</i></td>
-      <td><i>UBE2E4P</i></td>
-      <td><i>SSX9P</i></td>
+      <td align="center"><i>F8</i></td>
+      <td align="center"><i>UBE2E4P</i></td>
+      <td align="center"><i>SSX9P</i></td>
     </tr>
     <tr>
-      <td><i>CMC4</i></td>
-      <td><i>FAM47B</i></td>
-      <td><i>SSX3</i></td>
+      <td align="center"><i>CMC4</i></td>
+      <td align="center"><i>FAM47B</i></td>
+      <td align="center"><i>SSX3</i></td>
     </tr>
     <tr>
-      <td><i>TEX13A</i></td>
-      <td><i>PPP1R2P9</i></td>
-      <td></td>
+      <td align="center"><i>TEX13A</i></td>
+      <td align="center"><i>PPP1R2P9</i></td>
+      <td align="center"></td>
     </tr>
     <tr>
-      <td rowspan=4>ChrY</td>
-      <td><i>PRORY</i></td>
-      <td><i>TBL1Y</i></td>
+      <td align="center" rowspan=4>ChrY</td>
+      <td align="center"><i>PRORY</i></td>
+      <td align="center"><i>TBL1Y</i></td>
       <td><i>EIF1AY</i></td>
     </tr>
     <tr>
-      <td><i>KDM5Dv</td>
-      <td><i>FAM41AY2</i></td>
-      <td><i>RPS4Y2</i></td>
+      <td align="center"><i>KDM5Dv</td>
+      <td align="center"><i>FAM41AY2</i></td>
+      <td align="center"><i>RPS4Y2</i></td>
     </tr>
     <tr>
-      <td><i>AMELY</i></td>
-      <td><i>XKRY</i></td>
-      <td><i>DAZ4</i></td>
+      <td align="center"><i>AMELY</i></td>
+      <td align="center"><i>XKRY</i></td>
+      <td align="center"><i>DAZ4</i></td>
     </tr>
     <tr>
-      <td><i>TSPY2</i></td>
-      <td><i>TXLNGY</i></td>
-      <td></td>
+      <td align="center"><i>TSPY2</i></td>
+      <td align="center"><i>TXLNGY</i></td>
+      <td align="center"></td>
     </tr>
   </tbody>
 </table>
