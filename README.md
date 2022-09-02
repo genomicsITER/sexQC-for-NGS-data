@@ -1,4 +1,6 @@
 <!-- ------------------ SECTION ------------------ -->
+<a name="sex-check-qc"><
+/a>
 <p align="left">
   <a href="https://www.iter.es" title="Instituto Tecnológico y de Energ&iacute;as Renovables (ITER) / Institute of Technology and Renewable Energy (ITER)">
     <img src="https://github.com/genomicsITER/sexQC-for-NGS-data/blob/main/images/ITER_logo.png" width="30%" /> 
@@ -140,7 +142,20 @@ Finally, we create a scatter plot representing the fraction of reads in X-chromo
 
 ##### Figure 1. Sex classification of multiple samples based on heuristic analysis.
 
-![](https://github.com/genomicsITER/sexQC-for-NGS-data/blob/main/images/classification_table-heuristic_analysis.png)
+<div align="center">
 
-[RAB39B](https://www.genecards.org/cgi-bin/carddisp.pl?gene=RAB39B)
+<p align="left">
+  <a href="https://github.com/genomicsITER/sexQC-for-NGS-data/blob/main/images/classification_figure-heuristic_analysis.png" title="Figure 1">
+    <img src="https://github.com/genomicsITER/sexQC-for-NGS-data/blob/main/images/classification_figure-heuristic_analysis.png" width="auto" /> 
+  </a>
+</p>
 
+<b>Figure 1</b>. Sex inference of multiple samples based on our heuristic analysis.
+
+</div>
+
+<p align="right">
+  <a href="#sex-check-qc" title="Up">
+    <img src="https://github.com/genomicsITER/sexQC-for-NGS-data/blob/main/images/home-icon.png" style="float: right; margin: 10px; padding: 2px;" />
+  </a>
+</p>
