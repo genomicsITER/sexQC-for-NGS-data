@@ -42,7 +42,11 @@ ${SOMALIER} relate -o ${outname} ./*.somalier
 
 <!-- ------------------ SECTION ------------------ -->
 ## Approach 2: sex check analysis with a Heuristic
-A second approach used an in-house heuristic algorithm coded in BASH. The script let us to analyze the coverage or vertical-depth of 11 selected genes in the non-pseudoautosomal regions of the X and Y chromosomes ([Table 1](table-1-list-of-genes-assessed-in-sex-classification-in-both-x-and-y-chromosomes)). We then assess the depth distribution accross chromosomes X and Y in order to identify high covered genes suitable for sex classification based on read depth. In brief, we identify and extract selected gene regions from BAM files. Then the number of total reads per-chromosome and per-gene are obtained. Reads with a mapping quality lower than 50 (MQ<50) are filtered out for the analysis. Once we calculate the read counts, we compare the number of reads between both chromosomes. The fraction of reads in chromosome X compared to that of chromosome Y is calculated, and viceversa ([Equation 1](equation-1-fraction-of-reads-comparing-both-chromosomes)).
+A second approach uses an in-house heuristic algorithm coded in BASH. The script let us to analyze the coverage or vertical-depth of 11 selected genes located in the non-pseudoautosomal regions of the X and Y chromosomes ([Table 1](table-1-list-of-genes-assessed-in-sex-classification-in-both-x-and-y-chromosomes)). We then assess the depth distribution accross chromosomes X and Y in order to identify high covered genes suitable for sex classification based on read depth. In brief:
+- We identify and extract selected gene regions from BAM files.
+- Then the number of total reads per-chromosome and per-gene are obtained.
+- Reads with a mapping quality lower than 50 (MQ<50) are filtered out for the analysis. 
+- Once we calculate the read counts, we compare the number of reads between both chromosomes. The fraction of reads in chromosome X compared to that of chromosome Y is calculated, and viceversa ([Equation 1](equation-1-fraction-of-reads-comparing-both-chromosomes)).
 
 <div align="center">
   <p></p>
@@ -58,44 +62,44 @@ A second approach used an in-house heuristic algorithm coded in BASH. The script
   <tbody>
     <tr>
       <td align="center" rowspan=4>ChrX</td>
-      <td align="center"><i>RAB39B</i></td>
-      <td align="center"><i>ACTRT1</i></td>
-      <td align="center"><i>SSX1</i></td>
+      <td align="center"><i><a href="https://www.genecards.org/cgi-bin/carddisp.pl?gene=RAB39B">RAB39B</a></i></td>
+      <td align="center"><i><a href="https://www.genecards.org/cgi-bin/carddisp.pl?gene=ACTRT1">ACTRT1</a></i></td>
+      <td align="center"><i><a href="https://www.genecards.org/cgi-bin/carddisp.pl?gene=SSX1">SSX1</a></i></td>
     </tr>
     <tr>
-      <td align="center"><i>F8</i></td>
-      <td align="center"><i>UBE2E4P</i></td>
-      <td align="center"><i>SSX9P</i></td>
+      <td align="center"><i><a href="https://www.genecards.org/cgi-bin/carddisp.pl?gene=F8">F8</a></i></td>
+      <td align="center"><i><a href="https://www.genecards.org/cgi-bin/carddisp.pl?gene=UBE2E4P">UBE2E4P</a></i></td>
+      <td align="center"><i><a href="https://www.genecards.org/cgi-bin/carddisp.pl?gene=SSX9P">SSX9P</a></i></td>
     </tr>
     <tr>
-      <td align="center"><i>CMC4</i></td>
-      <td align="center"><i>FAM47B</i></td>
-      <td align="center"><i>SSX3</i></td>
+      <td align="center"><i><a href="https://www.genecards.org/cgi-bin/carddisp.pl?gene=CMC4">CMC4</a></i></td>
+      <td align="center"><i><a href="https://www.genecards.org/cgi-bin/carddisp.pl?gene=FAM47B">FAM47B</a></i></td>
+      <td align="center"><i><a href="https://www.genecards.org/cgi-bin/carddisp.pl?gene=SSX3">SSX3</a></i></td>
     </tr>
     <tr>
-      <td align="center"><i>TEX13A</i></td>
-      <td align="center"><i>PPP1R2P9</i></td>
+      <td align="center"><i><a href="https://www.genecards.org/cgi-bin/carddisp.pl?gene=TEX13A">TEX13A</a></i></td>
+      <td align="center"><i><a href="https://www.genecards.org/cgi-bin/carddisp.pl?gene=PPP1R2P9">PPP1R2P9</a></i></td>
       <td align="center"></td>
     </tr>
     <tr>
       <td align="center" rowspan=4>ChrY</td>
-      <td align="center"><i>PRORY</i></td>
-      <td align="center"><i>TBL1Y</i></td>
-      <td><i>EIF1AY</i></td>
+      <td align="center"><i><a href="https://www.genecards.org/cgi-bin/carddisp.pl?gene=PRORY">PRORY</a></i></td>
+      <td align="center"><i><a href="https://www.genecards.org/cgi-bin/carddisp.pl?gene=TBL1Y">TBL1Y</a></i></td>
+      <td align="center"><i><a href="https://www.genecards.org/cgi-bin/carddisp.pl?gene=EIF1AY">EIF1AY</a></i></td>
     </tr>
     <tr>
-      <td align="center"><i>KDM5Dv</td>
-      <td align="center"><i>FAM41AY2</i></td>
-      <td align="center"><i>RPS4Y2</i></td>
+      <td align="center"><i><a href="https://www.genecards.org/cgi-bin/carddisp.pl?gene=KDM5D">KDM5D</a></i></td>
+      <td align="center"><i><a href="https://www.genecards.org/cgi-bin/carddisp.pl?gene=FAM41AY2">FAM41AY2</a></i></td>
+      <td align="center"><i><a href="https://www.genecards.org/cgi-bin/carddisp.pl?gene=RPS4Y2">RPS4Y2</a></i></td>
     </tr>
     <tr>
-      <td align="center"><i>AMELY</i></td>
-      <td align="center"><i>XKRY</i></td>
-      <td align="center"><i>DAZ4</i></td>
+      <td align="center"><i><a href="https://www.genecards.org/cgi-bin/carddisp.pl?gene=AMELY">AMELY</a></i></td>
+      <td align="center"><i><a href="https://www.genecards.org/cgi-bin/carddisp.pl?gene=XKRY">XKRY</a></i></td>
+      <td align="center"><i><a href="https://www.genecards.org/cgi-bin/carddisp.pl?gene=DAZ4">DAZ4</a></i></td>
     </tr>
     <tr>
-      <td align="center"><i>TSPY2</i></td>
-      <td align="center"><i>TXLNGY</i></td>
+      <td align="center"><i><a href="https://www.genecards.org/cgi-bin/carddisp.pl?gene=TSPY2">TSPY2</a></i></td>
+      <td align="center"><i><a href="https://www.genecards.org/cgi-bin/carddisp.pl?gene=TXLNGY">TXLNGY</a></i></td>
       <td align="center"></td>
     </tr>
   </tbody>
@@ -117,12 +121,19 @@ $$f_Y = {Nreads_{chrY} \over Nreads_{chrY} + Nreads_{chrX}}$$
 
 <br />
 
-Female samples will have nearly all reads mapped to chromosome X and none in chromosome Y. 
+Theoretically, female samples will have all reads mapped to chromosome X and none in chromosome Y. Accordingly, <i>f<sub>X</sub></i>=1 and <i>f<sub>Y</sub></i>=0. In practice, female samples show nearly all reads mapped to chromosome X and nearly none in chromosome Y, thus resulting in fractions with values as <i>f<sub>X</sub></i>&#8771;1 and <i>f<sub>Y</sub></i>&#8771;0. 
 
-We have observed in our testing and validation datasets that the fraction of reads in chromosome X, <i>f<sub>X</sub></i>, is within the interval [0.988, 1], and the fraction of reads mapped to chromosome Y, <i>f<sub>Y</sub></i>, ranges in the interval [0, 0.012]. Conversely, male samples will have mapped reads splitted between genes on the X and Y chromosomes. In fact, we have observed a fraction of mapped reads in chromosome X in the interval [0.176, 0.593] and a fraction of reads mapped to chromosome Y in the interval [0.407, 0.824]. Male samples use to have a higher dispersion than females because of the observed variation in read depth between X and Y chromosomes.
+We have observed in our testing and validation datasets that the fraction of reads in chromosome X, <i>f<sub>X</sub></i>, is within the interval [0.988, 1], and the fraction of reads mapped to chromosome Y, <i>f<sub>Y</sub></i>, ranges in the interval [0, 0.012].
+
+Conversely, male samples will have mapped reads splitted between genes on the X and Y chromosomes. As a result, we have observed a fraction of mapped reads in chromosome X in the interval [0.176, 0.593] and a fraction of reads mapped to chromosome Y in the interval [0.407, 0.824].
+
+Male samples use to have a higher dispersion than females in the calculated fractions as a consequence of the observed variation in read depth between X and Y chromosomes.
 
 Finally, we create a scatter plot representing the fraction of reads in X-chromosome in the x-axis, and the fraction of reads in Y-chromosome in the y-axis for each sample ([Figure 1](figure-1-sex-classification-of-samples-based-on-heuristic-analysis)). As can be seen, the figure shows three different clusters: one for female samples, one for male samples, and a third cluster representing samples with uncertain sex assignation. The reasons for an unassigned sex could be related to a contamination of another sample with the opposite sex, sample swapping, or an error in the sample name.
 
 ##### Figure 1. Sex classification of multiple samples based on heuristic analysis.
 
 ![](https://github.com/genomicsITER/sexQC-for-NGS-data/blob/main/images/classification_table-heuristic_analysis.png)
+
+[RAB39B](https://www.genecards.org/cgi-bin/carddisp.pl?gene=RAB39B)
+
