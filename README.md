@@ -39,6 +39,7 @@ ${SOMALIER} relate -o ${outname} ./*.somalier
 A second approach is based on a in-house heuristic script coded in BASH. The script let us to analyze the coverage or vertical-depth of 11 selected genes in the non-pseudoautosomal regions of the X and Y chromosomes ([Table 1](table-1-list-of-genes-assessed-in-sex-classification-in-both-x-and-y-chromosomes)). We then assess the depth distribution accross both chromosomes X and Y to identify high covered genes suitable for sex classification based on read depth. In brief, we extract selected gene regions from BAM files, and then, reads on these genes are counted firstly by gene, and later, the total number of reads per chromosome. Reads with a mapping quality lower than 50 (MappingQuality<50) are filtered out for the analysis. Once we calculate the read count, we compare the number of reads between both chromosomes. The fraction of reads in chromosome X compared to that of chromosome Y is calculated, and vice versa ([Equation 1](equation-1-fraction-of-reads-comparing-both-chromosomes)).
 
 ##### Table 1. List of genes assessed in sex classification in both X and Y chromosomes.
+<div align="center">
 <table>
   <thead>
     <tr>
@@ -49,49 +50,49 @@ A second approach is based on a in-house heuristic script coded in BASH. The scr
   <tbody>
     <tr>
       <td rowspan=4>ChrX</td>
-      <td>RAB39B</td>
-      <td>ACTRT1</td>
-      <td>SSX1</td>
+      <td><i>RAB39B</i></td>
+      <td><i>ACTRT1</i></td>
+      <td><i>SSX1</i></td>
     </tr>
     <tr>
-      <td>F8</td>
-      <td>UBE2E4P</td>
-      <td>SSX9P</td>
+      <td><i>F8</i></td>
+      <td><i>UBE2E4P</i></td>
+      <td><i>SSX9P</i></td>
     </tr>
     <tr>
-      <td>CMC4</td>
-      <td>FAM47B</td>
-      <td>SSX3</td>
+      <td><i>CMC4</i></td>
+      <td><i>FAM47B</i></td>
+      <td><i>SSX3</i></td>
     </tr>
     <tr>
-      <td>TEX13A</td>
-      <td>PPP1R2P9</td>
+      <td><i>TEX13A</i></td>
+      <td><i>PPP1R2P9</i></td>
       <td></td>
     </tr>
     <tr>
       <td rowspan=4>ChrY</td>
-      <td>PRORY</td>
-      <td>TBL1Y</td>
-      <td>EIF1AY</td>
+      <td><i>PRORY</i></td>
+      <td><i>TBL1Y</i></td>
+      <td><i>EIF1AY</i></td>
     </tr>
     <tr>
-      <td>KDM5D</td>
-      <td>FAM41AY2</td>
-      <td>RPS4Y2</td>
+      <td><i>KDM5Dv</td>
+      <td><i>FAM41AY2</i></td>
+      <td><i>RPS4Y2</i></td>
     </tr>
     <tr>
-      <td>AMELY</td>
-      <td>XKRY</td>
-      <td>DAZ4</td>
+      <td><i>AMELY</i></td>
+      <td><i>XKRY</i></td>
+      <td><i>DAZ4</i></td>
     </tr>
     <tr>
-      <td>TSPY2</td>
-      <td>TXLNGY</td>
+      <td><i>TSPY2</i></td>
+      <td><i>TXLNGY</i></td>
       <td></td>
     </tr>
   </tbody>
 </table>
-
+</div>
 
 ##### Equation 1. Fraction of reads comparing both chromosomes.
 $$f_X = {Nreads_{chrX} \over Nreads_{chrX} + Nreads_{chrY}}$$
