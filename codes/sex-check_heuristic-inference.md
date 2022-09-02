@@ -116,7 +116,7 @@ done < "${bam_samples_Y}"
 ## End of script
 ```
 
-Finally, take the 'reads_table.tsv' file and plot the fractions <i>f<sub>Y</sub></i> <i>vs</i> <i>f<sub>X</sub></i> in your fauvorite data analysis program.
+Finally, open the 'reads_table.tsv' file and plot the fractions <i>f<sub>Y</sub></i> <i>vs</i> <i>f<sub>X</sub></i> with your favorite data analysis program.
 
 <p align="right">
   <a href="#sex-check-qc-code" title="Up">
