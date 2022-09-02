@@ -44,13 +44,16 @@ ${SOMALIER} relate -o ${outname} ./*.somalier
 
 <!-- ------------------ SECTION ------------------ -->
 ## Approach 2: sex check analysis with a Heuristic
-A second approach uses an in-house heuristic algorithm coded in BASH. The script let us to analyze the coverage or vertical-depth of 11 selected genes located in the non-pseudoautosomal regions (NPAR) of the X and Y chromosomes (Table 1). We then assess the depth distribution accross chromosomes X and Y in order to identify high covered genes suitable for sex classification based on read depth. Briefly, this is the algorithm:
+A second approach uses an in-house heuristic algorithm coded in BASH. The script let us to analyze the coverage or vertical-depth of 11 selected genes located in the non-pseudoautosomal regions (NPAR) of the X and Y chromosomes (Table 1). We then assess the depth distribution accross chromosomes X and Y in order to identify high covered genes suitable for sex classification based on read depth.
+
+Briefly, the heuristic follows this algorithm:
 <ol>
-  <li>Get the coverage distribution in NPAR of chromosomes X and Y.</li>
+  <li>Compute the coverage distribution in NPAR of chromosomes X and Y.</li>
   <li>Identify genes with high coverage.</li>
   <li>Extract selected gene regions from the corresponding BAM files.</li>
-  <li>Obtain the number of reads per-chromosome and per-gene.</li>
   <li>Filter reads with a mapping quality lower than 50 (MQ<50).</li>
+  <li>Obtain the number of reads per-chromosome.</li>
+  <li>Obtain the number of reads per-gene.</li>
   <li>Compute the fraction of reads in chromosomes X and Y according to [Equation 1].</li>
   <li>Plot results.</li>
 </ol>
