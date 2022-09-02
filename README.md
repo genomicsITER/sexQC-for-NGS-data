@@ -149,7 +149,7 @@ $$f_Y = {Nreads_{chrY} \over Nreads_{chrY} + Nreads_{chrX}}$$
 
 Theoretically, female samples will have all reads mapped to chromosome X and none in chromosome Y. Accordingly, <i>f<sub>X</sub></i>=1 and <i>f<sub>Y</sub></i>=0. In practice, female samples show nearly all reads mapped to chromosome X and nearly none in chromosome Y, thus resulting in fractions with values as <i>f<sub>X</sub></i>&#8771;1 and <i>f<sub>Y</sub></i>&#8771;0. 
 
-In our testing and validation datasets (n=920 exomes; publication in preparation) we have observed that the normalized fraction of reads in chromosome X, <i>f<sub>X</sub></i>, shows values within the interval [0.988, 1], and the normalized fraction of reads mapped to chromosome Y, <i>f<sub>Y</sub></i>, ranges in the interval [0, 0.012].
+In our testing and validation datasets (n=835 whole-exomes; publication in preparation) we have observed that the normalized fraction of reads in chromosome X, <i>f<sub>X</sub></i>, shows values within the interval [0.988, 1], and the normalized fraction of reads mapped to chromosome Y, <i>f<sub>Y</sub></i>, ranges in the interval [0, 0.012].
 
 Male samples will have mapped reads splitted between genes on the X and Y chromosomes. As a result, we have observed a fraction of mapped reads in chromosome X in the interval [0.176, 0.593] and the fraction of reads mapped to chromosome Y ranges in the interval [0.407, 0.824].
 
