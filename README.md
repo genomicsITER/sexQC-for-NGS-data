@@ -143,7 +143,6 @@ Male samples use to have a higher dispersion than females in the calculated frac
 
 A scatter plot representing the fraction of reads in X-chromosome in the x-axis, and the fraction of reads in Y-chromosome in the y-axis for each sample is shown (Figure 1). This plots shows three different clusters: one for female samples, one for male samples, and a third cluster representing samples with uncertain sex assignation. Uncertainties in sex inference may arise as a consequence of sample contamination (i.e. contamination of a sample with a different sex), sample swapping, error in the sample labeling, etc.
 
-##### Figure 1. Sex classification of multiple samples based on heuristic analysis.
 
 <div align="center">
 
