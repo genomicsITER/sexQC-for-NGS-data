@@ -29,23 +29,29 @@
 ## > Uncomment this line to load the required modules at HPC #
 #module load gcc/10.2.0 xz/5.2.5/gcc htslib/1.12/gcc samtools/1.12/gcc
 
+
 ## Define dirs and files
 ## Make sure all paths exist
 inpath="/path/to/sex-check/classifier"
-## List of BAM files with genes in chromosome X
+
+## List of BAM files with selected gene regions in chromosome X
 bam_samples_X="${inpath}/data/BAM_list_X"
-## List of BAM files with genes in chromosome Y
+
+## List of BAM files with selected gene regions in chromosome Y
 bam_samples_Y="${inpath}/data/BAM_list_Y"
+
 ## Outfile name
 count_table="${inpath}/data/reads_table.tsv"
 
 ## Set minimum MappingQuality value for reads
 MQ=50
 
+
 ## Define genes and their genomic regions
 ##Chromosome X
 genes_X=( "gene1" "gene2" ... )
 coordinates_X=( "chrX:..-.." "chrX:..-.." ...)
+
 ##Chromosome Y
 genes_Y=( "gene1" "gene2" ... )
 coordinates_Y=( "chrY:..-.." "chrY:..-.." ...)
