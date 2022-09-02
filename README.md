@@ -40,13 +40,19 @@ ${SOMALIER} relate -o ${outname} ./*.somalier
 
 [Visit the repository of `Somalier` at GitHub](https://github.com/brentp/somalier)
 
----
+<p align="right">
+  <a href="#sex-check-qc" title="Up">
+    <img src="https://github.com/genomicsITER/sexQC-for-NGS-data/blob/main/images/home-icon.png" style="float: right; margin: 10px; padding: 2px;" />
+  </a>
+</p>
 
+<hr>
 <!-- ------------------ SECTION ------------------ -->
-## Approach 2: sex inference with a Heuristic
-A second approach uses an in-house heuristic algorithm coded in BASH. The script let us to analyze the coverage or vertical-depth of 11 selected genes located in the non-pseudoautosomal regions (NPAR) of the X and Y chromosomes (Table 1). We then assess the depth distribution accross chromosomes X and Y in order to identify high covered genes suitable for sex classification based on read depth.
 
-Briefly, the heuristic follows this algorithm:
+## Approach 2: sex inference with a Heuristic
+A second approach uses an in-house `Heuristic` algorithm coded in BASH. The script let us to analyze the coverage or vertical-depth of 11 selected genes located in the non-pseudoautosomal regions (NPAR) of the X and Y chromosomes (Table 1). We then assess the depth distribution accross chromosomes X and Y in order to identify high covered genes suitable for sex classification based on read depth.
+
+Briefly, the `Heuristic` follows this algorithm:
 <ol>
   <li>Compute the coverage distribution in NPAR of chromosomes X and Y.</li>
   <li>Identify genes with high coverage.</li>
@@ -54,6 +60,7 @@ Briefly, the heuristic follows this algorithm:
   <li>Filter reads with a mapping quality lower than 50 (MQ<50).</li>
   <li>Obtain the number of reads per-chromosome.</li>
   <li>Obtain the number of reads per-gene.</li>
+  <li>Create a TSV file with reads per sample, chromosome, and gene.</li>
   <li>Compute the normalized fraction of reads in chromosomes X and Y according to [Equation 1].</li>
   <li>Plot results.</li>
 </ol>
@@ -155,6 +162,67 @@ A scatter plot representing the fraction of reads in X-chromosome in the x-axis,
 <b>Figure 1</b>. Sex inference of multiple samples based on our heuristic analysis.
 
 </div>
+
+<hr>
+<!-- ------------------ SECTION ------------------ -->
+
+### Code for the `Heuristic` approach ###
+
+&nbsp;&nbsp;Detailed <a href="https://github.com/genomicsITER/sexQC-for-NGS-data/codes/sex-check_heuristic-inference.md">code</a> with command usage for the`Heuristic`.
+
+<p align="right">
+  <a href="#sex-check-qc" title="Up">
+    <img src="https://github.com/genomicsITER/sexQC-for-NGS-data/blob/main/images/home-icon.png" style="float: right; margin: 10px; padding: 2px;" />
+  </a>
+</p>
+
+<hr>
+<!-- ------------------ SECTION ------------------ -->
+
+<a name="License and Attribution"></a>
+## License and Attribution ##
+
+This repository and data exports are released under the CC BY 4.0 license. Please acknowledge the authors of this repository, and the open source software used in this work (third-party copyrights and licenses may apply).
+
+Please cite as: _"Sex Inference as a Quality Control for NGS data, GitHub repository at https://github.com/genomicsITER/sexQC-for-NGS-data  (accessed on YYYY-MM-DD)"_.
+
+<p align="right">
+  <a href="#sex-check-qc" title="Up">
+    <img src="https://github.com/genomicsITER/sexQC-for-NGS-data/blob/main/images/home-icon.png" style="float: right; margin: 10px; padding: 2px;" />
+  </a>
+</p>
+
+<hr>
+<!-- ------------------ SECTION 10 ------------------ -->
+
+<a name="Participating"></a>
+## Participating ##
+
+> Want to share your relevant links? Place a Direct Message to @labcflores or @resocios on Twitter (see below).
+
+ <p align="left">
+  <a href="https://www.iter.es/areas/area-genomica/" title="Contact us at the Genomics Division of the Institute of Technology and Renewable Energy (ITER), Tenerife, Canary Islands, Spain">
+    <img src="https://github.com/genomicsITER/sexQC-for-NGS-data/blob/main/images/ITER_logo.png" width="30%" /> 
+  </a>
+</p>
+
+By JMLS <a href="https://twitter.com/resocios" title="Follow to @resocios on Twitter" >@resocios <img src="https://github.com/genomicsITER/sexQC-for-NGS-data/blob/main/images/Twitter_Social_Icon_Circle_Color.png" width="32px" /></a>
+
+Follow us on Twitter <a href="https://twitter.com/labcflores" title="Follow to @labcflores on Twitter" > @labcflores<img src="https://github.com/genomicsITER/sexQC-for-NGS-data/blob/main/images/Twitter_Social_Icon_Circle_Color.png" width="32px" /></a>
+
+<p align="right">
+  <a href="#sex-check-qc" title="Up">
+    <img src="https://github.com/genomicsITER/sexQC-for-NGS-data/blob/main/images/home-icon.png" style="float: right; margin: 10px; padding: 2px;" />
+  </a>
+</p>
+
+<hr>
+<!-- ------------------ SECTION ------------------ -->
+
+<a name="Update logs"></a>
+## Update logs ##
+
+> September 2, 2022. The repository becomes public.
 
 <p align="right">
   <a href="#sex-check-qc" title="Up">
